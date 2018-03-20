@@ -11,11 +11,12 @@ readonly BUILD_DIR="${1:-}"
 readonly CACHE_DIR="${2:-}"
 
 VIM_FILENAME='vim-7.3.tar.gz'
-HEROKU_VIM_URL="https://s3.amazonaws.com/heroku-vim/$VIM_FILENAME"
+AMZ_VIM_URL="https://s3.amazonaws.com/heroku-jvm-buildpack-vi/$VIM_FILENAME"
+# HEROKU_VIM_URL="https://s3.amazonaws.com/heroku-vim/$VIM_FILENAME"
 
-echo "    -> Downloading VIM... (${HEROKU_VIM_URL})"
+echo "    -> Downloading VIM... (${AMZ_VIM_URL})"
 
-curl --retry 2 --silent --max-time 60 --location "${HEROKU_VIM_URL}" --output "${CACHE_DIR}/${VIM_FILENAME}"
+curl --retry 2 --silent --max-time 60 --location "${AMZ_VIM_URL}" --output "${CACHE_DIR}/${VIM_FILENAME}"
 
 # install
 echo "    -> Installing VIM..."
@@ -23,6 +24,6 @@ echo "    -> Installing VIM..."
 mkdir -p "$BUILD_DIR/vim"
 tar -xf "${CACHE_DIR}/${VIM_FILENAME}" -C "${BUILD_DIR}/vim"
 
-export PATH=$PATH:'/app/vim/bin'
+export PATH=$PATH:/app/vim/bin
 
 echo "    DONE"
