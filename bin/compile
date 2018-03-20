@@ -24,7 +24,9 @@ echo "    -> Installing VIM..."
 mkdir -p "$BUILD_DIR/vim"
 tar -xf "${CACHE_DIR}/${VIM_FILENAME}" -C "${BUILD_DIR}/vim"
 
-export PATH=/app/vim/bin:$PATH
-echo "PATH=$PATH"
+# export
+PROFILE_PATH="$BUILD_DIR/.profile.d/vim.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH=$PATH:/app/vim/bin' >> $PROFILE_PATH
 
 echo "    DONE"
