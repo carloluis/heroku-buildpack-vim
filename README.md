@@ -4,11 +4,10 @@ Heroku Buildpack to install [Vim](https://www.vim.org/)
 
 > Vim - the ubiquitous text editor
 
-
 ## How it works
 
-Installs from Amazon S3 using a statically linked [Vim binary]((https://s3.amazonaws.com/bengoa/vim-static.tar.gz)).
-Vim instalation ends in `/app/vim` directory.
+Installs from Amazon S3 using a statically linked [Vim binary](https://s3.amazonaws.com/bengoa/vim-static.tar.gz).
+Vim installation ends in `/app/vim` directory.
 
 ## Configure from CLI
 
