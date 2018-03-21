@@ -10,9 +10,8 @@ readonly BP_DIR=$(cd "$(dirname "${0:-}")"/..; pwd) # absolute path
 readonly BUILD_DIR="${1:-}"
 readonly CACHE_DIR="${2:-}"
 
-VIM_FILENAME='vim-7.3.tar.gz'
-AMZ_VIM_URL="https://s3.amazonaws.com/heroku-jvm-buildpack-vi/$VIM_FILENAME"
-# HEROKU_VIM_URL="https://s3.amazonaws.com/heroku-vim/$VIM_FILENAME"
+VIM_FILENAME='vim-static.tar.gz'
+AMZ_VIM_URL="https://s3.amazonaws.com/bengoa/$VIM_FILENAME"
 
 echo "    -> Downloading VIM... (${AMZ_VIM_URL})"
 
@@ -27,6 +26,6 @@ tar -xf "${CACHE_DIR}/${VIM_FILENAME}" -C "${BUILD_DIR}/vim"
 # export
 PROFILE_PATH="$BUILD_DIR/.profile.d/vim.sh"
 mkdir -p $(dirname $PROFILE_PATH)
-echo 'export PATH=$PATH:/app/vim/bin' >> $PROFILE_PATH
+echo 'export PATH=$PATH:/app/vim' >> $PROFILE_PATH
 
 echo "    DONE"

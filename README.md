@@ -7,7 +7,7 @@ Heroku Buildpack to install [Vim](https://www.vim.org/)
 
 ## How it works
 
-Installs Vim from [Amazon S3](https://s3.amazonaws.com/heroku-vim/vim-7.3.tar.gz).
+Installs from Amazon S3 using a statically linked [Vim binary]((https://s3.amazonaws.com/bengoa/vim-static.tar.gz)).
 Vim instalation ends in `/app/vim` directory.
 
 ## Configure from CLI
