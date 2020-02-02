@@ -27,6 +27,16 @@ heroku buildpacks:add https://github.com/carloluis/heroku-buildpack-vim
 }
 ```
 
+<details>
+
+<summary>Lock the buildpack version</summary>
+
+You can lock to a specific buildpack version by adding its tag at the end of the URL:
+
+`https://github.com/carloluis/heroku-buildpack-vim#v1.0.0`
+
+</details>
+
 ## License
 
 MIT © [Carloluis](https://github.com/carloluis)
