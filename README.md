@@ -1,4 +1,4 @@
-# heroku-buildpack-vim
+# heroku-buildpack-vim &middot; [![GitHub license](https://img.shields.io/github/license/carloluis/heroku-buildpack-vim)](https://github.com/carloluis/heroku-buildpack-vim/blob/master/LICENSE)
 
 Heroku Buildpack to install [Vim](https://www.vim.org/)
 
